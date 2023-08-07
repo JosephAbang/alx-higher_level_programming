@@ -1,6 +1,11 @@
 # Python - Hello, World (done by Joseph Abang)
 
-This project started by testing my ability to use a shell script to run a python script. It then tested how efficient I am in manipulating string objects. I was able to do all the mandatory tasks and give an excellent attempt at the advanced tasks. The bytecode and compiling tasks were the most challenging as it required a high level of deep research. I ran so maby codes without getting the required output until i used a resource which pointed me to the solution. At the end of this readme, i have attached resources that came in handy in workng on this project.
+This project started by testing my ability to use a shell script to run a python script. 
+It then tested how efficient I am in manipulating string objects. I was able to do all 
+the mandatory tasks and give an excellent attempt at the advanced tasks. The bytecode 
+and compiling tasks were the most challenging as it required a high level of deep 
+research. I ran so maby codes without getting the required output until i used a 
+resource which pointed me to the solution.
 
 
 ## Function Prototypes:
