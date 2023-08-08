@@ -4,7 +4,5 @@ def uppercase(str):
         ascii_code = ord(char)
         if 97 <= ascii_code <= 122:
             char = chr(ascii_code - 32)
-            print("{}".format(char), end="")
+        print("{}".format(char), end="")
     print()
-
-uppercase("best")
