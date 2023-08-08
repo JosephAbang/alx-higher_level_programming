@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 def uppercase(str):
     for char in str:
         ascii_code = ord(char)
         if 97 <= ascii_code <= 122:
-            upper_char = chr(ascii_code - 32)
-        else:
-            upper_char = char
-        print(upper_char, end='')
+            char = chr(ascii_code - 32)
+            print("{}".format(char), end="")
     print()
+
+uppercase("best")
