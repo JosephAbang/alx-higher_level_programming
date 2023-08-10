@@ -11,4 +11,3 @@ if __name__ == "__main__":
         print(f'{argc} arguments:')
         for arg in range(1, (argc + 1)):
             print(f'{arg}: {argv[arg]}')
-
