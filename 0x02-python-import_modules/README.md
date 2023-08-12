@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Python - import & modules
 
 In this project, I practiced importing modules, functions and files. I also got introduced to a new builtins which i used to solve some of the tasks.
