@@ -67,6 +67,3 @@ In this project, I practiced importing modules, functions and files. I also got 
   * [103-fast_alphabet.py](./103-fast_alphabet.py): Python program that prints the alphabet in
   uppercase, followed by a new line.
   * Without using loops, conditoinals, `str.join()`, string literals, or system calls.
-=======
-projecr 0x02
->>>>>>> c3a38645952e74dc1c42a0e3850d148c0a41d1d8
