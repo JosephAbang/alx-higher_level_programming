@@ -23,6 +23,21 @@ void print_python_list_info(PyObject *p)
 	for (i = 0; i < size; i++)
 	{
 		item = PyList_GET_ITEM(p, i);
-		printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
+		/*printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);*/
+		if (PyLong_Check(item)) {
+			printf("Element %d: int\n", i);
+  		} else if (PyFloat_Check(item)) {
+			printf("Element %d: float\n", i);
+        	} else if (PyUnicode_Check(item)) {
+			printf("Element %d: str\n", i);
+        	} else if (PyTuple_Check(item)) {
+            		printf("Element %d: Tuple\n", i);
+        	} else if (PyList_Check(item)) {
+            		printf("Element %d: List\n", i);
+        	} else if (PyBytes_Check(item)) {
+            		printf("Element %d: Bytes\n", i);
+        	} else {
+            		printf("Element %d: Unknown Type\n", i);
+       		}
 	}
 }
