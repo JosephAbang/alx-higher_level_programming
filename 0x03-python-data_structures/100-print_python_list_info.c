@@ -25,25 +25,25 @@ void print_python_list_info(PyObject *p)
 		item = PyList_GET_ITEM(p, i);
 
 		if (PyLong_Check(item)) {
-			printf("Element %d: int\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
   		} else if (PyFloat_Check(item)) {
-			printf("Element %d: float\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
         	} else if (PyUnicode_Check(item)) {
-			printf("Element %d: str\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
         	} else if (PyTuple_Check(item)) {
-            		printf("Element %d: Tuple\n", i);
+           		printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
         	} else if (PyList_Check(item)) {
-            		printf("Element %d: List\n", i);
+            		printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
         	} else if (PyBytes_Check(item)) {
-            		printf("Element %d: Bytes\n", i);
+            		printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
         	} else if (PyBool_Check(item)) {
-			printf("Element %d: bool\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
 		} else if (PyDict_Check(item)) {
-			printf("Element %d: dict\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
 		} else if (PyByteArray_Check(item)) {
-			printf("Element %d: bytearray\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
 		} else if (PySet_Check(item)) {
-			printf("Element %d: set\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
 		}
 		else {
 			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
