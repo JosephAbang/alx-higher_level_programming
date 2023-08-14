@@ -36,7 +36,16 @@ void print_python_list_info(PyObject *p)
             		printf("Element %d: List\n", i);
         	} else if (PyBytes_Check(item)) {
             		printf("Element %d: Bytes\n", i);
-        	} else {
+        	} else if (PyBool_Check(item)) {
+			printf("Element %d: bool\n", i);
+		} else if (PyDict_Check(item)) {
+			printf("Element %d: dict\n", i);
+		} else if (PyByteArray_Check(item)) {
+			printf("Element %d: bytearray\n", i);
+		} else if (PySet_Check(item)) {
+			printf("Element %d: set\n", i);
+		}
+		else {
             		printf("Element %d: Unknown Type\n", i);
        		}
 	}
