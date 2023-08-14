@@ -8,6 +8,10 @@
 
 void print_python_list_info(PyObject *p)
 {
+	if (p == NULL || !PyList_Check(p))
+	{
+		return;
+	}
 	int size = Py_SIZE(p), i;
 	int alloc = ((PyListObject *)p)->allocated;
 	PyObject *item;
