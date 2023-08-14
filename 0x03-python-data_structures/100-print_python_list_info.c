@@ -23,7 +23,7 @@ void print_python_list_info(PyObject *p)
 	for (i = 0; i < size; i++)
 	{
 		item = PyList_GET_ITEM(p, i);
-		/*printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);*/
+
 		if (PyLong_Check(item)) {
 			printf("Element %d: int\n", i);
   		} else if (PyFloat_Check(item)) {
@@ -46,7 +46,7 @@ void print_python_list_info(PyObject *p)
 			printf("Element %d: set\n", i);
 		}
 		else {
-            		printf("Element %d: Unknown Type\n", i);
+			printf("Element %d:  %s\n", i, Py_TYPE(item)->tp_name);
        		}
 	}
 }
