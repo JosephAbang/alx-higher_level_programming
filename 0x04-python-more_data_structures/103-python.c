@@ -36,7 +36,6 @@ void print_python_bytes(PyObject *p)
 	Py_ssize_t b_size = ((PyVarObject *)p)->ob_size;
 	ssize_t i = 0;
 	char *str = ((PyBytesObject *)p)->ob_sval;
-	/*PyObject *bytes = PyBytes_FromString(str);*/
 
 	printf("[.] bytes object info\n");
 	if (PyBytes_Check(p))
@@ -46,7 +45,6 @@ void print_python_bytes(PyObject *p)
 
 		b_size = b_size < 10 ? b_size + 1 : 10;
 		printf("   first %ld bytes: ", b_size);
-		/*printf("%s", PyBytes_AS_STRING(p));*/
 		while (i < b_size)
 		{
 			printf("%02hhx ", str[i]);
