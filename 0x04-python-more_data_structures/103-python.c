@@ -26,7 +26,7 @@ void print_python_list(PyObject *p)
 }
 
 
-/** 
+/**
  * print_python_bytes - Prints info about a python bytes
  * @p: list
  * Return: void
