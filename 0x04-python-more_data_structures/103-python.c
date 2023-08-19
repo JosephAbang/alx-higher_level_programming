@@ -1,14 +1,19 @@
 #include <Python.h>
 #include <string.h>
 
+/**
+ * print_python_list - Prints info about a python list
+ * @p: list
+ * Return: void
+ **/
+
 void print_python_list(PyObject *p)
 {
-
 	Py_ssize_t l_alloc = ((PyListObject *)p)->allocated;
 	Py_ssize_t l_size = ((PyVarObject *)p)->ob_size;
 	ssize_t i = 0;
 	PyObject *elem;
-	
+
 	printf("[*] Print list info\n");
 	printf("[*] Size of the Python List = %ld\n", l_size);
 	printf("[*] Allocated = %ld\n", l_alloc);
@@ -19,6 +24,12 @@ void print_python_list(PyObject *p)
 		i++;
 	}
 }
+
+
+/** print_python_bytes - Prints info about a python bytes
+ * @p: list
+ * Return: void
+ **/
 
 void print_python_bytes(PyObject *p)
 {
@@ -32,7 +43,7 @@ void print_python_bytes(PyObject *p)
 	{
 		printf("   size: %ld\n", b_size);
 		printf("   trying string: %s\n", str);
-		
+
 		b_size = b_size < 10 ? b_size + 1: 10;
 		printf("   first %ld bytes: ", b_size);
 		/*printf("%s", PyBytes_AS_STRING(p));*/
