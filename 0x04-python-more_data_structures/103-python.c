@@ -26,7 +26,8 @@ void print_python_list(PyObject *p)
 }
 
 
-/** print_python_bytes - Prints info about a python bytes
+/** 
+ * print_python_bytes - Prints info about a python bytes
  * @p: list
  * Return: void
  **/
@@ -44,7 +45,7 @@ void print_python_bytes(PyObject *p)
 		printf("   size: %ld\n", b_size);
 		printf("   trying string: %s\n", str);
 
-		b_size = b_size < 10 ? b_size + 1: 10;
+		b_size = b_size < 10 ? b_size + 1 : 10;
 		printf("   first %ld bytes: ", b_size);
 		/*printf("%s", PyBytes_AS_STRING(p));*/
 		while (i < b_size)
