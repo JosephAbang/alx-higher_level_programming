@@ -40,14 +40,17 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	if (PyBytes_Check(p))
 	{
-		printf("   size: %ld\n", b_size);
-		printf("   trying string: %s\n", str);
+		printf("  size: %ld\n", b_size);
+		printf("  trying string: %s\n", str);
 
 		b_size = b_size < 10 ? b_size + 1 : 10;
-		printf("   first %ld bytes: ", b_size);
+		printf("  first %ld bytes: ", b_size);
 		while (i < b_size)
 		{
-			printf("%02hhx ", str[i]);
+			if ((i == (b_size - 1)))
+				printf("%02hhx", str[i]);
+			else
+				printf("%02hhx ", str[i]);
 			i++;
 		}
 		printf("\n");
