@@ -5,7 +5,7 @@
  * @p: list
  * Return: void
  **/
-
+void print_python_bytes(PyObject *p);
 void print_python_list(PyObject *p)
 {
 	Py_ssize_t l_alloc = ((PyListObject *)p)->allocated;
@@ -20,6 +20,10 @@ void print_python_list(PyObject *p)
 	{
 		elem = ((PyListObject *)p)->ob_item[i];
 		printf("Element %ld: %s\n", i, elem->ob_type->tp_name);
+		if (PyBytes_Check(elem))
+		{
+			print_python_bytes(elem);
+		}
 		i++;
 	}
 }
