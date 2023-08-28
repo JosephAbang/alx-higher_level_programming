@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
-    ret_bool = False
+    retbool = False
     try:
-        print(("{:d}".format(), int(value)))
+        print(("{:d}".format(int(value))))
         retbool = True
-    except IndexError:
+    except (IndexError, ValueError):
         pass
-    return ret_bool
+    return retbool
