@@ -2,7 +2,7 @@
 def safe_print_integer(value):
     retbool = False
     try:
-        print(("{:d}".format(int(value))))
+        print(("{:d}".format(value)))
         retbool = True
     except (IndexError, ValueError):
         pass
