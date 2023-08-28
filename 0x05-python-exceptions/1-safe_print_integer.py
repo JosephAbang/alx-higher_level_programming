@@ -4,6 +4,6 @@ def safe_print_integer(value):
     try:
         print(("{:d}".format(value)))
         retbool = True
-    except (IndexError, ValueError):
+    except Exception:
         pass
     return retbool
