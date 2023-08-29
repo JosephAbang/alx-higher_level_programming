@@ -4,13 +4,14 @@ import sys
 
 def safe_print_integer_err(value):
     try:
-        print("{:d}".format(value))
+        int_val = int(value)
+        print("{:d}".format(int_val))
         return True
-    except TypeError:
+    except ValueError:
         print("Exception: Unknown format code 'd' for object of type '{}'\
                 ".format(value.__class__.__name__), file=sys.stderr)
         return False
-    except ValueError:
+    except TypeError:
         print("Exception: unsupported format string passed to \
-                str.__format__", file=sys.stderr)
+                {}.__format__".format(value.__class__.__name__), file=sys.stderr)
         return False
