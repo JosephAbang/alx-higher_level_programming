@@ -5,7 +5,7 @@
 class Square:
     """Class defines a square"""
     __size = 0
-    __position = (0,0)
+    __position = (0, 0)
 
     def __init__(self, size=0, position=(0, 0)):
         if type(size) != int:
@@ -13,6 +13,8 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         if type(position[0]) != int or type(position[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = (position[0], position[1])
@@ -64,5 +66,7 @@ class Square:
     @position.setter
     def position(self, value):
         if type(value[0]) != int or type(value[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
