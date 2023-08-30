@@ -38,26 +38,12 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            count = self.__size
             x, y = self.__position
-            i = 0
-            j = 0
-            k = 0
-            t = 0
-            while i < count:
-                j = 0
-                k = 0
-                while k < x:
-                    while t < y and False:
-                        print(' ', end='')
-                        t += 1
-                    print(' ', end='')
-                    k += 1
-                while j < count:
-                    print("#", end='')
-                    j += 1
+            for i in range(y):
                 print()
-                i += 1
+            for j in range(self.__size):
+                print(' ' * x, end='')
+                print('#' * self.__size)
 
     @property
     def position(self):
