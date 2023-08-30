@@ -1,0 +1,68 @@
+#!/usr/bin/python3
+"""Module defines classes"""
+
+
+class Square:
+    """Class defines a square"""
+    __size = 0
+    __position = (0,0)
+
+    def __init__(self, size=0, position=(0, 0)):
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        if type(position[0]) != int or type(position[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__size = size
+        self.__position = (position[0], position[1])
+
+    def area(self):
+        return self.__size * self.__size
+
+    @property
+    def size(self):
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    def my_print(self):
+        if self.__size == 0:
+            print()
+        else:
+            count = self.__size
+            x, y = self.__position
+            i = 0
+            j = 0
+            k = 0
+            t = 0
+            while i < count:
+                j = 0
+                k = 0
+                while k < x:
+                    while t < y and False:
+                        print(' ', end='')
+                        t += 1
+                    print(' ', end='')
+                    k += 1
+                while j < count:
+                    print("#", end='')
+                    j += 1
+                print()
+                i += 1
+
+    @property
+    def position(self):
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        if type(value[0]) != int or type(value[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
