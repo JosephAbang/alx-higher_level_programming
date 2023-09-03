@@ -1,0 +1,37 @@
+This is a test file for the test driven development module. First thing is to import the module
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text = None
+>>> text_indentation(text)
+>>> text = "This is a test sentence. This is another test sentence."
+>>> text_indentation(text)
+This is a test sentence.
+<BLANKLINE>
+This is another test sentence.
+<BLANKLINE>
+>>> text = "How about this: a test with colons? What do you think? Great!"
+>>> text_indentation(text)
+How about this:
+<BLANKLINE>
+a test with colons?
+<BLANKLINE>
+What do you think?
+<BLANKLINE>
+Great!
+>>> text = "Only ellipsis should count..."
+>>> text_indentation(text)
+Only ellipsis should count.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+>>> text = 123
+>>> text_indentation(text)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+>>> text = ["A", "list", "of", "words"]
+>>> text_indentation(text)
+Traceback (most recent call last):
+TypeError: text must be a string

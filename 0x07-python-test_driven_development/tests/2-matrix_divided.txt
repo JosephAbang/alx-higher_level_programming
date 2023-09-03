@@ -1,49 +1,61 @@
-The ``tests`` module
-====================
+This is a test file for the test driven development module. First thing is to import the module:
 
-Using the ``matrix_divided`` function
--------------------------------------
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-This is a test file for the test driven development module. First thing is to import the module
+Let's create a sample matrix:
 
-	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> print(matrix_divided(matrix, 3))
-	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-	>>> print(matrix)
-	[[1, 2, 3], [4, 5, 6]]
-	>>> matrix = [[1, 2, 3], [4, "j", 6]]
-	>>> try:
-	...	print(matrix_divided(matrix, 3))
-	... except Exception as e:
-	...	print(e)
-	matrix must be a matrix (list of lists) of integers/floats
-	>>> try:
-	...	matrix = [[1, 2, 3], [4, 5, 6, 9]]
-	...	print(matrix_divided(matrix, 3))
-	... except Exception as e:
-	...	print(e)
-	Each row of the matrix must have the same size
-	>>> try:
-	...	matrix = [[1, 2, 3], [4, 5, 6]]
-	...	print(matrix_divided(matrix, "p"))
-	... except Exception as e:
-	...	print(e)
-	div must be a number
-	>>> try:
-	...	matrix = [[1, 2, 3], [4, 5, 6]]
-	...	print(matrix_divided(matrix, 0))
-	... except Exception as e:
-	...	print(e)
-	division by zero
-	>>> try:
-	...	print(matrix_divided(None, 6))
-	... except Exception as e:
-	...	print(e)
-	[[]]
-	>>> matrix = [[1, 2, 3]]
-        >>> print(matrix_divided(matrix, 3))
-	[[0.33, 0.67, 1.0]]
-	>>> matrix = [[]]
-        >>> print(matrix_divided(matrix, 3))
-	[[]]
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+Now, we can use the `matrix_divided` function to divide all elements of the matrix by 3:
+
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+The original matrix should remain unchanged:
+
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+
+Let's test some error cases. If the matrix contains a non-numeric element:
+
+>>> matrix = [[1, 2, 3], [4, "j", 6]]
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except Exception as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+If the matrix rows have different sizes:
+
+>>> matrix = [[1, 2, 3], [4, 5, 6, 9]]
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except Exception as e:
+...     print(e)
+Each row of the matrix must have the same size
+
+If the divisor is not a number:
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> try:
+...     print(matrix_divided(matrix, "p"))
+... except Exception as e:
+...     print(e)
+div must be a number
+
+If the divisor is 0:
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> try:
+...     print(matrix_divided(matrix, 0))
+... except Exception as e:
+...     print(e)
+division by zero
+
+If the matrix is empty:
+
+>>> try:
+...     print(matrix_divided([], 6))
+... except Exception as e:
+...     print(e)
+[[]]

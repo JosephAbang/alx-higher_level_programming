@@ -5,7 +5,7 @@
 def add_integer(a, b=98):
     """add two integers"""
 
-    if a == None:
+    if a is None:
         a = 0
     elif type(a) not in [int, float]:
         raise TypeError("a must be an integer")
