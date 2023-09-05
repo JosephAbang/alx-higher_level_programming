@@ -60,8 +60,8 @@ class Rectangle:
 
     def __repr__(self):
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return "''"
         res = ''
         for i in range(self.__height):
-            res += "#" * self.__width + '\n'
+            res += "'#'" * self.__width + '\n'
         return res[:-1]
