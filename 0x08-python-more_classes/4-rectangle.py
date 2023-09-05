@@ -59,9 +59,4 @@ class Rectangle:
         return res[:-1]
 
     def __repr__(self):
-        if self.__width == 0 or self.__height == 0:
-            return "''"
-        res = ''
-        for i in range(self.__height):
-            res += "'#'" * self.__width + '\n'
-        return res[:-1]
+        return f"Rectangle({self.__width}, {self.__height})"
