@@ -16,7 +16,7 @@ class Rectangle:
             raise TypeError('height must be an integer')
         elif height < 0:
             raise ValueError('height must be >= 0')
-        self.number_of_instances += 1
+        Rectangle.number_of_instances += 1
         self.__width = width
         self.__height = height
 
@@ -65,5 +65,5 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        self.number_of_instances -= 1
         print('Bye rectangle...')
+        Rectangle.number_of_instances -= 1
