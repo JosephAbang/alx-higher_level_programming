@@ -15,7 +15,7 @@ def matrix_mul(m_a, m_b):
 
     elif not m_a:
         raise ValueError("m_a can't be empty")
-    
+ 
     elif not m_b:
         raise ValueError("m_b can't be empty")
 
