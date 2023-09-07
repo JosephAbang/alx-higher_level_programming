@@ -6,6 +6,7 @@ def matrix_mul(m_a, m_b):
     """
     function that performs Matrix multiplication - only
     Matrix product (two matrices)
+    """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
 
@@ -32,7 +33,6 @@ def matrix_mul(m_a, m_b):
 
     elif len(m_a[0]) != len(m_b):
         raise ValueError("Incompatible matrix dimensions for multiplication")
-    """
     new_matrix = []
 
     i = 0
