@@ -1,4 +1,4 @@
-#!/usr/bib/python3
+#!/usr/bin/python3
 """module contains a class called base geometry"""
 
 
