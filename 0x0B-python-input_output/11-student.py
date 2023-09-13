@@ -21,8 +21,5 @@ class Student():
             return vars(self)
 
     def reload_from_json(self, json):
-        new_json = vars(self)
-        updated = {}
-        for key in json.keys():
-            updated[key] = new_json[key]
-        return updated
+        for k, v in json.items():
+            setattr(self, k, v)
