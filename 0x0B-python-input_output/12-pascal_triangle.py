@@ -2,8 +2,6 @@
 """Module contans a function"""
 
 
-
-
 def pascal_triangle(n):
     """Implements pascal triangle"""
 
