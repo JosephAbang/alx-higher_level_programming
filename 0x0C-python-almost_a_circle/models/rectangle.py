@@ -88,7 +88,14 @@ class Rectangle(Base):
     def display(self):
         high = self.__height
         wide = self.__width
+        x = self.__x
+        y = self.__y
+
+        for k in range(y):
+            print()
         for i in range(high):
+            for m in range(x):
+                print(' ', end='')
             for j in range(wide):
                 print("#", end='')
             print()
