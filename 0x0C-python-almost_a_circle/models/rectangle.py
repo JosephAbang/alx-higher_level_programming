@@ -107,16 +107,8 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         if len(args) == 0:
             for key, value in kwargs.items():
-                if key == "width":
-                    self.__width = value
-                elif key == "height":
-                    self.__height = value
-                elif key == "x":
-                    self.__x = value
-                elif key == "y":
-                    self.__y = value
-                elif key == "id":
-                    self.id = value
+                if hasattr(self, key):
+                    setattr(self, key, value)
         else:
             if len(args) >= 1:
                 self.id = args[0]
@@ -128,3 +120,12 @@ class Rectangle(Base):
                 self.__x = args[3]
             if len(args) >= 5:
                 self.__y = args[4]
+
+    def to_dictionary(self):
+        return {
+                "id": self.id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y
+                }
