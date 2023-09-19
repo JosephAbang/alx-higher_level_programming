@@ -8,6 +8,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """initialize instance attributes"""
         if id is not None:
             self.id = id
         else:
@@ -16,6 +17,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """convert json to string"""
         if list_dictionaries is None:
             return "[]"
         else:
@@ -23,6 +25,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """save to a file"""
         if list_objs is None:
             list_objs = []
         filename = cls.__name__ + ".json"
@@ -32,6 +35,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """convert json to string"""
         if json_string is None:
             return "[]"
         else:
@@ -39,6 +43,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """create an instance"""
         if cls.__name__ == "Rectangle":
             dummy = cls(4, 5, 5, 0, 0)
         elif cls.__name__ == "Square":
@@ -48,6 +53,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """load data from file"""
         filename = cls.__name__ + ".json"
         inst_list = []
         try:

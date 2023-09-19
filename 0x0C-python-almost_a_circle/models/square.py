@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """Module contains class named square"""
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """class Swuare inherits from class Rectangle"""
+    """class Square inherits from class Rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
+        """initialize instance attributes"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -14,10 +15,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """getter for size"""
         return self.width
 
     @size.setter
     def size(self, val):
+        """setter for size"""
         if type(val) is not int:
             raise TypeError("width must be an integer")
         elif val < 0:
@@ -26,6 +29,7 @@ class Square(Rectangle):
             self.width = val
 
     def update(self, *args, **kwargs):
+        """update attributes of new instance"""
         if args:
             self.id = args[0]
             if len(args) >= 2:
@@ -40,6 +44,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """convert to dictionary"""
         return {
                 "id": self.id,
                 "size": self.width,
