@@ -59,7 +59,7 @@ class Base:
         try:
             with open(filename, mode="r", encoding="utf-8") as file:
                 json_str = file.read()
-                json_list = json.loads(json_str)
+                json_list = cls.from_json_string(json_str)
                 for member in json_list:
                     inst = cls.create(**member)
                     inst_list.append(inst)
