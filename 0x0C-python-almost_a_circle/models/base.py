@@ -30,8 +30,18 @@ class Base:
             json_list = [obj.to_dictionary() for obj in list_objs]
             f.write(cls.to_json_string(json_list))
 
+    @staticmethod
     def from_json_string(json_string):
         if json_string is None:
             return "[]"
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(4, 5, 5, 0, 0)
+        else:
+            dummy = cls(4)
+        dummy.update(**dictionary)
+        return dummy
