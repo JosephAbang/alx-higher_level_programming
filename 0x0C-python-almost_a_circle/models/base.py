@@ -39,9 +39,6 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        if cls.__name__ == "Rectangle":
-            dummy = cls(4, 5, 5, 0, 0)
-        else:
-            dummy = cls(4)
+        dummy = cls(4, 5, 5, 0, 0)
         dummy.update(**dictionary)
         return dummy
