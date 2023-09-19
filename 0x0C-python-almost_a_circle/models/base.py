@@ -39,6 +39,24 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        dummy = cls(4, 5, 5, 0, 0)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(4, 5, 5, 0, 0)
+        elif cls.__name__ == "Square":
+            dummy = cls(2, 3)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        inst_list = []
+        try:
+            with open(filename, mode="r", encoding="utf-8") as file:
+                json_str = file.read()
+                json_list = json.loads(json_str)
+                for member in json_list:
+                    inst = cls.create(**member)
+                    inst_list.append(inst)
+        except FileNotFoundError:
+            pass
+        return inst_list
