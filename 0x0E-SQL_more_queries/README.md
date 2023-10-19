@@ -19,7 +19,7 @@ Files
 | [12-no_genre.sql](12-no_genre.sql) | Query to list shows without genre. |
 | [13-count_shows_genre.sql](13-count_shows_genre.sql) | Query to count shows by genre. |
 | [14-my_genres.sql](14-my_genres.sql) | Query to list genres of a specific user. |
-| [15-comedy_only.sql](115-comedy_only.sql) | Query to list genres of a user's shows. |
+| [15-comedy_only.sql](15-comedy_only.sql) | Query to list genres of a user's shows. |
 
 Tasks
 -----
