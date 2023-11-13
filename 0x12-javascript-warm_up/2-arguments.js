@@ -7,5 +7,5 @@ if (args[3]) {
 } else if (args[2]) {
   console.log('Argument found');
 } else {
-  console.log('no argument');
+  console.log('No argument');
 }
