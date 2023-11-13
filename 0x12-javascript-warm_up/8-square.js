@@ -5,10 +5,10 @@ let count;
 if (Number(args[2])) {
   let num = parseInt(args[2]);
   while (num > 0) {
-    let text = 'x';
+    let text = 'X';
     count = parseInt(args[2]);
     while (count > 1) {
-      text = text + 'x';
+      text = text + 'X';
       count--;
     }
     console.log(text);
