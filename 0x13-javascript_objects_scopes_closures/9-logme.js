@@ -1,4 +1,4 @@
-#!/ussr/bin/node
+#!/usr/bin/node
 
 let count = 0;
 
