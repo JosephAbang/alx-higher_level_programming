@@ -4,7 +4,7 @@
 
 This project aims to bridge the realms of Databases and Python, introducing you to the usage of MySQL databases and Object Relational Mapping (ORM) with SQLAlchemy in Python.
 
-In the first part, the project utilizes the MySQLdb module to connect to a MySQL database and execute SQL queries. The second part explores SQLAlchemy, an ORM that abstracts storage usage in Python, eliminating the need for direct SQL queries. This allows for greater flexibility in changing storage types without rewriting the entire project.
+In the first part, theproject utilizes the MySQLdb module to connect to a MySQL database and execute SQL queries. The second part explores SQLAlchemy, an ORM that abstracts storage usage in Python, eliminating the need for direct SQL queries. This allows for greater flexibility in changing storage types without rewriting the entire project.
 
 ## Tasks
 
