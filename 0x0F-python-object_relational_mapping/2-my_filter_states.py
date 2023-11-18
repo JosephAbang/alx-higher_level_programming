@@ -12,11 +12,11 @@ if __name__ == '__main__':
     db = args[3]
     ht = "localhost"
     pt = 3306
-    match = args[4]
+    _match = args[4]
 
     conn = MySQLdb.connect(host=ht, user=usr, passwd=pwd, database=db, port=pt)
     curs = conn.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(match)
+    query = "SELECT * FROM states WHERE states.name = '{}' ORDER BY states.id".format(_match)
     curs.execute(query)
     rows = curs.fetchall()
     for row in rows:
