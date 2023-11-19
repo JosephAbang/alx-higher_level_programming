@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Prints object matched with argument given
+Adds new object and returns object id
 """
 
 from sqlalchemy.orm import Session
