@@ -13,7 +13,7 @@ if __name__ == '__main__':
     ht = "localhost"
     pt = 3306
 
-    con = MySQLdb.connect(host=ht, user=usr, passwd=pwd, db=db, port=pt, charset="utf8")
+    con = MySQLdb.connect(host=ht, user=usr, passwd=pwd, db=db, port=pt)
     curs = con.cursor()
     query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id"
     curs.execute(query, ('N%',))
