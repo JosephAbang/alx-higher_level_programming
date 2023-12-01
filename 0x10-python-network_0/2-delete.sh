@@ -1,4 +1,4 @@
 #!/bin/bash
-# Use cURL to send a GET request and display the body for a 200 status code
+# Use cURL to send a DELETE request and display the body
 
-curl -s -X GET "$1"
+curl -s -X DELETE "$1"
