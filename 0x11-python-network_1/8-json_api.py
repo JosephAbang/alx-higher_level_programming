@@ -12,7 +12,7 @@ if __name__ == "__main__":
         char = ""
     else:
         char = sys.argv[1]
-    
+
     val = {'q': char}
     r = requests.post(url, data=val)
     try:
