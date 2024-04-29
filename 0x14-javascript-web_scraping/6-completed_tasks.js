@@ -21,11 +21,15 @@ request(apiUrl, function (error, response, body) {
         }
       });
 
-      const output = Object.entries(completed)
-        .map(([key, value]) => `${key}: ${value}`)
-        .join(',\n ');
+      if (Object.keys(completed).length === 0) {
+        console.log('{}');
+      } else {
+        const output = Object.entries(completed)
+          .map(([key, value]) => `${key}: ${value}`)
+          .join(',\n ');
 
-      console.log('{\n' + output + '\n}');
+        console.log('{\n' + output + '\n}');
+      }
     } catch (parseError) {
       console.error('Error parsing JSON:', parseError);
     }
