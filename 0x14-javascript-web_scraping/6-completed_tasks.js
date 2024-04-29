@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const req = require('request');
+const request = require('request');
 
 const apiUrl = process.argv[2];
 
-req(apiUrl, function (error, response, body) {
+request(apiUrl, function (error, response, body) {
   if (!error && response.statusCode === 200) {
     try {
       const todos = JSON.parse(body);
@@ -21,9 +21,11 @@ req(apiUrl, function (error, response, body) {
         }
       });
 
-      const output = `{${Object.entries(completed).map(([key, value]) => ` '${key}': ${value}`).join(',\n ')} }`;
+      const output = Object.entries(completed)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join(',\n ');
 
-      console.log(Object.keys(completed).length > 2 ? output : completed);
+      console.log('{\n' + output + '\n}');
     } catch (parseError) {
       console.error('Error parsing JSON:', parseError);
     }
