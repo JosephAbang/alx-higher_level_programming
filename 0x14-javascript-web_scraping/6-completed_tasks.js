@@ -1,39 +1,26 @@
 #!/usr/bin/node
 
-const request = require('request');
+const req = require('request');
+const link = process.argv[2];
 
-const apiUrl = process.argv[2];
-
-request(apiUrl, function (error, response, body) {
-  if (!error && response.statusCode === 200) {
-    try {
-      const todos = JSON.parse(body);
-
-      const completed = {};
-
-      todos.forEach((todo) => {
-        if (todo.completed) {
-          if (completed[todo.userId] === undefined) {
-            completed[todo.userId] = 1;
-          } else {
-            completed[todo.userId]++;
-          }
+req(link, function (error, response, content) {
+  if (error) {
+    console.log(error);
+  } else if (response.statusCode === 200) {
+    const finishedTasks = {};
+    const tasksData = JSON.parse(content);
+    for (const index in tasksData) {
+      const taskItem = tasksData[index];
+      if (taskItem.completed === true) {
+        if (finishedTasks[taskItem.userId] === undefined) {
+          finishedTasks[taskItem.userId] = 1;
+        } else {
+          finishedTasks[taskItem.userId]++;
         }
-      });
-
-      if (Object.keys(completed).length === 0) {
-        console.log('{}');
-      } else {
-        const output = Object.entries(completed)
-          .map(([key, value]) => `${key}: ${value}`)
-          .join(',\n ');
-
-        console.log('{\n' + output + '\n}');
       }
-    } catch (parseError) {
-      console.error('Error parsing JSON:', parseError);
     }
+    console.log(finishedTasks);
   } else {
-    console.error('Error:', error);
+    console.log('An error occurred. Status code: ' + response.statusCode);
   }
 });
